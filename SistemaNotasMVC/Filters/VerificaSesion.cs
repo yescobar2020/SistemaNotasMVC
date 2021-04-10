@@ -2,6 +2,7 @@
 
 using System.Web;
 using System.Web.Mvc;
+using ET.Acceso;
 using SistemaNotasMVC.Controllers;
 
 namespace SistemaNotasMVC.Filters
@@ -14,7 +15,7 @@ namespace SistemaNotasMVC.Filters
             try
             {
                 base.OnActionExecuting(filterContext);
-                var usuario = HttpContext.Current.Session["User"];
+                var usuario = (LoginET)HttpContext.Current.Session["User"];
                 if (usuario==null)
                 {
                     if(filterContext.Controller is AccesoController == false)   

@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
+using System;
 using System.Web.Mvc;
+using BL.Acceso;
+using ET.Acceso;
 
 namespace SistemaNotasMVC.Controllers
-{
+{       
     public class AccesoController : Controller
     {
+        LoginBL loginBL = new LoginBL();
         // GET: Acceso
         public ActionResult Login()
         {
@@ -19,13 +20,20 @@ namespace SistemaNotasMVC.Controllers
         {
             try
             {
-
+                LoginET login = loginBL.Ingresar(user, pass);
+                if(login == null)
+                {
+                    ViewBag.Error = " Usuario o contraseña invalido";
+                    return View();
+                }
+                Session["User"] = login;
+                return RedirectToAction("Index", "Home");
             }
-            catch
+            catch(Exception ex)
             {
-
-            }
-            return View();
+                ViewBag.Error = ex.Message;
+                return View();
+            }            
         }
             
     }
