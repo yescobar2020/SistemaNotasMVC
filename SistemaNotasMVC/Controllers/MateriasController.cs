@@ -3,44 +3,49 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ET.Acceso;
+using BL.Configuracion;
+using ET.Configuracion;
 using SistemaNotasMVC.Models;
 
 namespace SistemaNotasMVC.Controllers
 {
-    public class HomeController : Controller
+    public class MateriasController : Controller
     {
-        // GET: Home
+        MateriasBL materiasBL = new MateriasBL();
+
+        // GET: Materias
         public ActionResult Index()
         {
-            HomeModel model = new HomeModel();
-            var login = (LoginResult)Session["User"];
-            if (login != null)
-                model.NombreProfe = login.Profesor.PFNombre;
-            
-            
+            MateriasModel model = new MateriasModel();
+            model.Materias = materiasBL.Get();
             return View(model);
         }
 
-        // GET: Home/Details/5
+
+        // GET: Materias/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Home/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Home/Create
+        // POST: Materias/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create( MateriasET materia) 
         {
             try
             {
-                // TODO: Add insert logic here
+                MateriasET mat = materiasBL.Insertar( materia);
+                if(mat.MTId == 0)
+                {
+                    ViewBag.Error = "Error al insertar";
+                    return RedirectToAction("Index",materia);
+                }
+               
 
                 return RedirectToAction("Index");
             }
@@ -50,13 +55,13 @@ namespace SistemaNotasMVC.Controllers
             }
         }
 
-        // GET: Home/Edit/5
+        // GET: Materias/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Home/Edit/5
+        // POST: Materias/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -72,13 +77,13 @@ namespace SistemaNotasMVC.Controllers
             }
         }
 
-        // GET: Home/Delete/5
+        // GET: Materias/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Home/Delete/5
+        // POST: Materias/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {

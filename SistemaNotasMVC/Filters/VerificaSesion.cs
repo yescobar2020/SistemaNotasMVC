@@ -15,7 +15,7 @@ namespace SistemaNotasMVC.Filters
             try
             {
                 base.OnActionExecuting(filterContext);
-                var usuario = (LoginET)HttpContext.Current.Session["User"];
+                var usuario = (LoginResult)HttpContext.Current.Session["User"];
                 if (usuario==null)
                 {
                     if(filterContext.Controller is AccesoController == false)   

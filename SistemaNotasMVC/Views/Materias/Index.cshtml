@@ -1,0 +1,31 @@
+﻿@using SistemaNotasMVC.Models
+@model MateriasModel
+@{
+    ViewBag.Title = "Materias";
+}
+
+<h2>Materias </h2>
+
+
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre Materia</th>
+            <th scope="col" colspan="2">Opciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Materias)
+        {            
+        <tr>
+            <td>@item.MTId</td>
+            <td>@item.MTNombre</td>
+            <td width="100px"> <a href="/Materias/Edit/@item.MTId" class="btn btn-primary">Editar </a> </td>
+            <td width="100px"><a href="/Materias/Delete/@item.MTId" class="btn btn-danger">Eliminar </a></td>
+        </tr>
+        }        
+    </tbody>
+</table>

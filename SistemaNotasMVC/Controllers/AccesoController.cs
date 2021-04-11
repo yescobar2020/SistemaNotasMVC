@@ -3,6 +3,7 @@ using System;
 using System.Web.Mvc;
 using BL.Acceso;
 using ET.Acceso;
+using SistemaNotasMVC.Models;
 
 namespace SistemaNotasMVC.Controllers
 {       
@@ -20,13 +21,15 @@ namespace SistemaNotasMVC.Controllers
         {
             try
             {
-                LoginET login = loginBL.Ingresar(user, pass);
+                LoginResult login = loginBL.Ingresar(user, pass);
+                
                 if(login == null)
                 {
                     ViewBag.Error = " Usuario o contraseña invalido";
                     return View();
                 }
                 Session["User"] = login;
+               
                 return RedirectToAction("Index", "Home");
             }
             catch(Exception ex)
