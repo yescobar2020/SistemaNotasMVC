@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Acceso\LoginBL.cs" />
+    <Compile Include="Configuracion\DepartamentoBL.cs" />
     <Compile Include="Configuracion\MateriasBL.cs" />
+    <Compile Include="Configuracion\PaisesBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

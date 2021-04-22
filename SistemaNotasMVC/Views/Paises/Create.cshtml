@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Paises";
+}
+
+<h2>Nuevo Pais</h2>
+<form action="@Url.Content("~/Paises/Create")" method="post">
+    <div class="mb-3">
+        <label for="txtPaises" class="form-label">Nombre Del Pais</label>
+        <input type="text" class="form-control" id="txPais" name="PAName">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="txtPaises" class="form-label">Lenguaje Del Pais</label>
+        <input type="text" class="form-control" id="txtPais" name="PALanguage">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+   
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+

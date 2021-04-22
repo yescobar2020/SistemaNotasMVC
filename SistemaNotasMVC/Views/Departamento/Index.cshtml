@@ -1,0 +1,38 @@
+﻿@using SistemaNotasMVC.Models
+@model DepartamentoModel
+@{
+    ViewBag.Title = "Departamentos";
+}
+
+<h2>Departamentos </h2>
+
+<a href="~/Departamento/Create" class="btn btn-primary">Nuevo </a>
+
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre Departamento</th>
+            <th scope="col">Codigo postal</th>
+            <th scope="col">Creado Deparamento</th>
+            <th scope="col">Modificado Departamento</th>
+            <th scope="col" colspan="2">Opciones</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Departamentos)
+        {
+            <tr>
+                <td>@item.DPId</td>
+                <td>@item.DPNombre</td>
+                <td>@item.DPCodigoPostal</td>
+                <td>@item.DPCreado</td>
+                <td>@item.DPModificado</td>
+                <td width="100px"> <a href="/Departamento/Edit/@item.DPId" class="btn btn-primary">Editar </a> </td>
+                <td width="100px"><a href="/Departamento/Delete/@item.DPId" class="btn btn-danger">Eliminar </a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

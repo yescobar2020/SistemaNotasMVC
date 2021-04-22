@@ -1,0 +1,23 @@
+﻿
+@model  ET.Configuracion.PaisesET
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Editar Pais</h2>
+<form action="@Url.Content("~/Paises/Edit")" method="post">
+    <input value="@Model.PAId" type="hidden" class="form-control"  name="PAId">
+    <div class="mb-3">
+        <label for="txtPaises" class="form-label">Nombre Del Pais</label>
+        <input value="@Model.PAName" type="text" class="form-control" id="txPais" name="PAName">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="txtPaises" class="form-label">Lenguaje Del Pais</label>
+        <input value="@Model.PALanguage" type="text" class="form-control" id="txtPais" name="PALanguage">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+

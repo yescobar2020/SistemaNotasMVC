@@ -1,0 +1,33 @@
+﻿@model SistemaNotasMVC.Models.DepartamentoCreateModel
+@{
+    ViewBag.Title = "Departamentos";
+}
+
+<h2>Nuevo departamento</h2>
+<form action="@Url.Content("~/Departamento/Create")" method="post">
+    <div class="mb-3">
+        <label for="txtDepartamentos" class="form-label">Nombre Del departamento</label>
+        <input type="text" class="form-control" id="txtDepartamento" name="DPNombre">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="txtDepartamentos" class="form-label">Codigo postal</label>
+        <input type="text" class="form-control" id="txtDepartamento" name="DPCodigoPostal">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="txtDepartamentos" class="form-label">Pais Id</label>
+        <select name="DPPaisId" id="DPPaisId" class="form-control validate">
+            @foreach(var item in Model.Paises)
+            {
+                <option value="@item.PAId">@item.PAName </option>
+            }
+
+        </select>
+        
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+

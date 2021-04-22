@@ -1,0 +1,29 @@
+﻿
+@model  ET.Configuracion.DepartamentoET
+
+@{
+    ViewBag.Title = "Edit departamento";
+}
+
+<h2>Editar departamento</h2>
+<form action="@Url.Content("~/Departamento/Edit")" method="post">
+    <input value="@Model.DPId" type="hidden" class="form-control" name="DPId">
+    <div class="mb-3">
+        <label for="txtDepartamentos" class="form-label">Nombre Del Departamento</label>
+        <input value="@Model.DPNombre" type="text" class="form-control" id="txDepartamento" name="DPNombre">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="txtDepartamentos" class="form-label">Codigo Postal</label>
+        <input value="@Model.DPCodigoPostal" type="text" class="form-control" id="txtDepartamento" name="DPCodigoPostal">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="txtDepartamentos" class="form-label">Pais</label>
+        <input value="@Model.DPPaisId" type="text" class="form-control" id="txtDepartamento" name="DPPaisId">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+

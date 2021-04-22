@@ -44,7 +44,9 @@
     <Compile Include="Acceso\LoginET.cs" />
     <Compile Include="Acceso\LoginResult.cs" />
     <Compile Include="Acceso\ProfesorET.cs" />
+    <Compile Include="Configuracion\DepartamentoET.cs" />
     <Compile Include="Configuracion\MateriasET.cs" />
+    <Compile Include="Configuracion\PaisesET.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
