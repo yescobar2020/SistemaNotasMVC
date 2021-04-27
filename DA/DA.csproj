@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Acceso\LoginDA.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Configuracion\AlumnoDA.cs" />
     <Compile Include="Configuracion\DepartamentoDA.cs" />
     <Compile Include="Configuracion\MateriasDA.cs" />
     <Compile Include="Configuracion\PaisesDA.cs" />

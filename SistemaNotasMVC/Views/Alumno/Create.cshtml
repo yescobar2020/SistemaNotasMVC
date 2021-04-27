@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Alumno nuevo";
+}
+
+<h2>Nuevo Estudiante</h2>
+<form action="@Url.Content("~/Alumno/Create")" method="post">
+    <div class="mb-3">
+        <label for="txtAlumnos" class="form-label">Documento del alumno</label>
+        <input type="text" class="form-control" id="txAlumno" name="ALDocumento">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="txtAlumnos" class="form-label">Nombre del alumno</label>
+        <input type="text" class="form-control" id="txtPais" name="ALNombre">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+

@@ -101,6 +101,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccesoController.cs" />
+    <Compile Include="Controllers\AlumnoController.cs" />
     <Compile Include="Controllers\DepartamentoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MateriasController.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AlumnoModel.cs" />
     <Compile Include="Models\DepartamentoCreateModel.cs" />
     <Compile Include="Models\DepartamentoModel.cs" />
     <Compile Include="Models\HomeModel.cs" />
@@ -133,6 +135,9 @@
     <Content Include="Views\Departamento\Index.cshtml" />
     <Content Include="Views\Departamento\Create.cshtml" />
     <Content Include="Views\Departamento\Edit.cshtml" />
+    <Content Include="Views\Materias\Edit.cshtml" />
+    <Content Include="Views\Alumno\Index.cshtml" />
+    <Content Include="Views\Alumno\Create.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

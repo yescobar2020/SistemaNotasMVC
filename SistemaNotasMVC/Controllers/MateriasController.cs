@@ -58,45 +58,33 @@ namespace SistemaNotasMVC.Controllers
         // GET: Materias/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            MateriasET materiaId = materiasBL.MateriasById_G(id);
+            return View(materiaId);
         }
 
         // POST: Materias/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(MateriasET materiasET)
         {
             try
             {
-                // TODO: Add update logic here
+                MateriasET result = materiasBL.Update(materiasET);
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception e)
             {
-                return View();
+                return View(materiasET);
             }
         }
 
         // GET: Materias/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            bool materiaId = materiasBL.Delete(id);
+            return RedirectToAction("Index");
         }
 
-        // POST: Materias/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+       
     }
 }

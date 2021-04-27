@@ -17,5 +17,17 @@ namespace BL.Configuracion
         {
             return materiasDA.Get();
         }
+        public MateriasET Update(MateriasET materias)
+        {
+            return materiasDA.Update(materias);
+        }
+        public MateriasET MateriasById_G(int id)
+        {
+            return materiasDA.MateriasById_G(id);
+        }
+        public bool Delete(int id)
+        {
+            return materiasDA.Delete(id);
+        }
     }
 }

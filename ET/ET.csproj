@@ -44,6 +44,7 @@
     <Compile Include="Acceso\LoginET.cs" />
     <Compile Include="Acceso\LoginResult.cs" />
     <Compile Include="Acceso\ProfesorET.cs" />
+    <Compile Include="Configuracion\AlumnoET.cs" />
     <Compile Include="Configuracion\DepartamentoET.cs" />
     <Compile Include="Configuracion\MateriasET.cs" />
     <Compile Include="Configuracion\PaisesET.cs" />

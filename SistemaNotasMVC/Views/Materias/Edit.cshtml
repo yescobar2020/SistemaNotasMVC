@@ -1,0 +1,18 @@
+﻿@model ET.Configuracion.MateriasET
+@{
+    ViewBag.Title = "Edit Materia";
+}
+
+<h2>Editar Materia</h2>
+<form action="@Url.Content("~/Materias/Edit")" method="post">
+    <input value="@Model.MTId" type="hidden" class="form-control" name="MTId">
+    <div class="mb-3">
+        <label for="txtMaterias" class="form-label">Nombre De la Materia</label>
+        <input value="@Model.MTNombre" type="text" class="form-control" id="txMateria" name="MTNombre">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    
+   
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
