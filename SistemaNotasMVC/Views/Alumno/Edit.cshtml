@@ -1,0 +1,22 @@
+﻿@model ET.Configuracion.AlumnoET
+@{
+    ViewBag.Title = "Edit Alumno";
+}
+
+<h2>Editar Alumno</h2>
+<form action="@Url.Content("~/Alumno/Edit")" method="post">
+    <input value="@Model.ALId" type="hidden" class="form-control" name="ALId">
+    <div class="mb-3">
+        <label for="txtAlumnos" class="form-label">Documento del Alumno</label>
+        <input value="@Model.ALDocumento" type="text" class="form-control" id="txAlumno" name="ALDocumento">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+    <div class="mb-3">
+        <label for="txtAlumnos" class="form-label">Nombre Del Alumno</label>
+        <input value="@Model.ALNombre" type="text" class="form-control" id="txAlumno" name="ALNombre">
+        <div id="emailHelp" class="form-text"></div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>

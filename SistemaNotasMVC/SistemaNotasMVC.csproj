@@ -106,6 +106,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MateriasController.cs" />
     <Compile Include="Controllers\PaisesController.cs" />
+    <Compile Include="Controllers\ProfesorController.cs" />
     <Compile Include="Filters\AutorizacionUsuario.cs" />
     <Compile Include="Filters\VerificaSesion.cs" />
     <Compile Include="Global.asax.cs">
@@ -117,6 +118,7 @@
     <Compile Include="Models\HomeModel.cs" />
     <Compile Include="Models\MateriasModel.cs" />
     <Compile Include="Models\PaisesModel.cs" />
+    <Compile Include="Models\ProfesorModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -138,6 +140,8 @@
     <Content Include="Views\Materias\Edit.cshtml" />
     <Content Include="Views\Alumno\Index.cshtml" />
     <Content Include="Views\Alumno\Create.cshtml" />
+    <Content Include="Views\Alumno\Edit.cshtml" />
+    <Content Include="Views\Profesor\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -48,6 +48,7 @@
     <Compile Include="Configuracion\DepartamentoDA.cs" />
     <Compile Include="Configuracion\MateriasDA.cs" />
     <Compile Include="Configuracion\PaisesDA.cs" />
+    <Compile Include="Configuracion\ProfesorDA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

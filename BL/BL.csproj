@@ -46,6 +46,7 @@
     <Compile Include="Configuracion\DepartamentoBL.cs" />
     <Compile Include="Configuracion\MateriasBL.cs" />
     <Compile Include="Configuracion\PaisesBL.cs" />
+    <Compile Include="Configuracion\ProfesorBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

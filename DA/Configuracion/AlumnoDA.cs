@@ -48,5 +48,57 @@ namespace DA.Configuracion
             }
             return alumnos;
         }
+        public AlumnoET Update(AlumnoET alumno)
+        {
+            using(SqlConnection con = new SqlConnection(Conexion.CadenaConexion))
+            {
+                using(SqlCommand cmd = new SqlCommand("SP_Alumno_U", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ALId", alumno.ALId);
+                    cmd.Parameters.AddWithValue("@ALDocumento", alumno.ALDocumento);
+                    cmd.Parameters.AddWithValue("@ALNombre", alumno.ALNombre);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            return alumno;
+        }
+        public AlumnoET AlumnoById_G(int id)
+        {
+            AlumnoET alumno = null;
+            using(SqlConnection con= new SqlConnection(Conexion.CadenaConexion))
+            {
+                using(SqlCommand cmd = new SqlCommand("SP_AlumnoById_G", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ALId", id);
+                    con.Open();
+                    SqlDataReader rd = cmd.ExecuteReader();
+                    while (rd.Read())
+                    {
+                        alumno = new AlumnoET();
+                        alumno.ALId = Convert.ToInt32(rd["ALId"]);
+                        alumno.ALDocumento = Convert.ToString(rd["ALDocumento"]);
+                        alumno.ALNombre = Convert.ToString(rd["ALNombre"]);
+                    }
+                }
+            }
+            return alumno;
+        }
+        public bool Delete(int id)
+        {
+            using(SqlConnection con = new SqlConnection(Conexion.CadenaConexion))
+            {
+                using(SqlCommand cmd= new SqlCommand("SP_Alumno_D", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ALId", id);
+                    con.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            return true;
+        }
     }
 }

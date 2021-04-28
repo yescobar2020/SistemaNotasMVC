@@ -22,5 +22,17 @@ namespace BL.Configuracion
 
             return alumnoDA.Insertar(alumnos);
         }
+        public AlumnoET Update(AlumnoET alumno)
+        {
+            return alumnoDA.Update(alumno);
+        }
+        public AlumnoET AlumnoById_G(int id)
+        {
+            return alumnoDA.AlumnoById_G(id);
+        }
+        public bool Delete(int id)
+        {
+            return alumnoDA.Delete(id);
+        }
     }
 }

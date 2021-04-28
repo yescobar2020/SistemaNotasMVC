@@ -56,45 +56,33 @@ namespace SistemaNotasMVC.Controllers
         // GET: Alumno/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            AlumnoET alumnoId = alumnoBL.AlumnoById_G(id);
+            return View(alumnoId);
         }
 
         // POST: Alumno/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(AlumnoET alumnoET)
         {
             try
             {
-                // TODO: Add update logic here
+                AlumnoET result = alumnoBL.Update(alumnoET);
 
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception e)
             {
-                return View();
+                return View(alumnoET);
             }
         }
 
         // GET: Alumno/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            bool alumnoId = alumnoBL.Delete(id);
+            return RedirectToAction("Index");
         }
 
-        // POST: Alumno/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }
